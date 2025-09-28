@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuyết Trình về Lạm Phát</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        main {
+            padding: 25px 40px;
+        }
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #0056b3;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.3em;
+            color: #17a2b8;
+            margin-top: 25px;
+        }
+        p, ul {
+            font-size: 1.1em;
+            color: #495057;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23007bff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            background-size: 24px;
+        }
+        strong {
+            color: #0056b3;
+        }
+        .highlight {
+            background-color: #e9f5ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .grid-item {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .winner {
+            border-left: 5px solid #28a745;
+        }
+        .loser {
+            border-left: 5px solid #dc3545;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Tìm Hiểu Về Lạm Phát</h1>
+            <p>Một cái nhìn tổng quan về các khái niệm, chi phí và cách đo lường</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>1. Tốc độ thay đổi quan trọng hơn mức giá</h2>
+                <p>Điểm cốt lõi không nằm ở việc giá cả cao hay thấp, mà là chúng thay đổi <strong>nhanh và khó đoán</strong> đến mức nào.</p>
+                <ul>
+                    <li><strong>Mức giá cao nhưng ổn định:</strong> Nền kinh tế có thể thích ứng. Doanh nghiệp và người dân có thể lập kế hoạch dài hạn một cách tự tin.</li>
+                    <li><strong>Tỷ lệ lạm phát cao và biến động:</strong> Gây ra sự không chắc chắn, làm xói mòn niềm tin. Nó giống như việc lái một chiếc xe liên tục tăng giảm tốc đột ngột - rất nguy hiểm và khó kiểm soát.</li>
+                </ul>
+                <div class="highlight">
+                    <p><strong>Ví dụ:</strong> Một quốc gia có giá một ổ bánh mì là 10 đồng nhưng ổn định trong 10 năm sẽ có nền kinh tế khỏe mạnh hơn một quốc gia mà giá bánh mì tăng từ 1 đồng lên 5 đồng chỉ trong một năm.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>2. Các Chi Phí Của Lạm Phát</h2>
+                <p>Lạm phát không chỉ làm giảm sức mua mà còn gây ra những tổn thất thực tế cho xã hội:</p>
+                <h3>👟 Chi phí mòn giày (Shoe-leather Cost)</h3>
+                <p>Là chi phí về thời gian và công sức khi người dân cố gắng giảm lượng tiền mặt nắm giữ. Họ phải thường xuyên đến ngân hàng hơn để giao dịch, làm lãng phí nguồn lực. Trong thời đại số, đây là thời gian và chi phí quản lý các khoản đầu tư để tránh "thuế lạm phát".</p>
+                <h3>🍽️ Chi phí thực đơn (Menu Cost)</h3>
+                <p>Là chi phí mà doanh nghiệp phải chịu mỗi khi cập nhật lại giá sản phẩm: từ việc in lại thực đơn, catalogue, thay đổi nhãn giá cho đến việc cập nhật hệ thống phần mềm.</p>
+                <h3>⚖️ Chi phí đơn vị hạch toán (Unit of Account Cost)</h3>
+                <p>Lạm phát làm tiền tệ mất đi vai trò là một thước đo giá trị đáng tin cậy. Điều này làm méo mó các quyết định kinh tế, tính toán lợi nhuận và nghĩa vụ thuế, vì thước đo (tiền) liên tục co lại.</p>
+            </section>
+
+            <section>
+                <h2>3. Kẻ Thắng, Người Thua & Cuộc Chiến Chống Lạm Phát</h2>
+                <p>Lạm phát phân phối lại của cải một cách tùy tiện trong xã hội.</p>
+                <div class="grid-container">
+                    <div class="grid-item loser">
+                        <h3>📉 Những người bị thiệt (Losers)</h3>
+                        <ul>
+                            <li><strong>Người cho vay</strong> (lãi suất cố định)</li>
+                            <li><strong>Người tiết kiệm, giữ tiền mặt</strong></li>
+                            <li><strong>Người có thu nhập cố định</strong> (hưu trí, công chức)</li>
+                        </ul>
+                    </div>
+                    <div class="grid-item winner">
+                        <h3>📈 Những người được lợi (Winners)</h3>
+                        <ul>
+                            <li><strong>Người đi vay</strong> (lãi suất cố định)</li>
+                            <li><strong>Chính phủ</strong> (với tư cách là người đi vay lớn)</li>
+                            <li><strong>Người sở hữu tài sản thực</strong> (bất động sản, vàng)</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 style="margin-top: 30px;">Lạm phát thì dễ, Giảm lạm phát thì khó</h3>
+                <p>Gây ra lạm phát có thể dễ dàng (ví dụ: in tiền). Tuy nhiên, để kiềm chế nó (disinflation), ngân hàng trung ương phải thắt chặt chính sách tiền tệ, thường là bằng cách <strong>tăng lãi suất</strong>. Hành động này thường gây ra những hậu quả đau đớn như tăng trưởng kinh tế chậm lại, thất nghiệp gia tăng, thậm chí là suy thoái.</p>
+            </section>
+            
+            <section>
+                <h2>4. Đo Lường Lạm Phát: Rổ Hàng Hóa & Chỉ Số Giá</h2>
+                <p>Để theo dõi lạm phát, các nhà kinh tế sử dụng một phương pháp có hệ thống:</p>
+                <ul>
+                    <li><strong>🛒 Rổ hàng hóa (Market Basket):</strong> Là một danh sách cố định các hàng hóa và dịch vụ đại diện cho thói quen chi tiêu của một người tiêu dùng điển hình.</li>
+                    <li><strong>Chỉ số giá (Price Index):</strong> Là một con số đo lường chi phí của rổ hàng hóa tại một thời điểm so với chi phí của nó trong một năm gốc. Công thức cơ bản:
+                        <div class="highlight" style="text-align: center; font-family: monospace; font-size: 1.2em; padding: 20px;">
+                        Chỉ số giá = (Chi phí rổ hàng hóa hiện tại / Chi phí rổ hàng hóa năm gốc) × 100
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. Các Chỉ Số Lạm Phát Phổ Biến</h2>
+                <p>Có nhiều cách để đo lường lạm phát, mỗi cách cung cấp một góc nhìn khác nhau.</p>
+                <h3>Chỉ số giá tiêu dùng (CPI - Consumer Price Index)</h3>
+                <p>Đây là thước đo phổ biến nhất, theo dõi sự thay đổi giá của một rổ hàng hóa mà <strong>người tiêu dùng thành thị</strong> thường mua. Đây là con số mà chúng ta hay nghe nhất trên tin tức.</p>
+                <h3>Các thước đo khác</h3>
+                <ul>
+                    <li><strong>Chỉ số giá sản xuất (PPI):</strong> Theo dõi sự thay đổi giá từ góc độ của <strong>người sản xuất</strong> (giá nguyên vật liệu, hàng hóa trung gian). PPI thường là một chỉ báo sớm cho CPI.</li>
+                    <li><strong>Chỉ số giảm phát GDP (GDP Deflator):</strong> Là thước đo rộng nhất, phản ánh sự thay đổi giá của <strong>tất cả</strong> các hàng hóa và dịch vụ được sản xuất trong nước.</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Bài thuyết trình về Lạm Phát - Tổng hợp các khái niệm cơ bản.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
