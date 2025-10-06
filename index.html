@@ -3,199 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thuyết Trình về Lạm Phát</title>
+    <title>Minh Họa Kinh Tế: Từ Franc sang Euro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --blue-france: #0055A4;
+            --red-france: #EF4135;
+            --white-france: #FFFFFF;
+            --grey-light: #f4f5f7;
+            --grey-dark: #333;
+            --text-color: #4A4A4A;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            /* ĐÃ SỬA: Áp dụng phông chữ Roboto */
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            background-color: var(--grey-light);
+            color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
+
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        header {
-            background-color: #0056b3;
-            color: white;
-            padding: 30px;
+            max-width: 850px;
+            width: 100%;
+            background-color: var(--white-france);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             text-align: center;
+            border-top: 5px solid var(--blue-france);
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
+
+        h1, h2, h3, button {
+            /* ĐÃ SỬA: Áp dụng phông chữ Oswald cho tiêu đề */
+            font-family: 'Oswald', sans-serif;
         }
-        header p {
+
+        h1 {
+            color: var(--blue-france);
+            font-size: 2.4em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
             font-size: 1.1em;
-            opacity: 0.9;
-            margin-top: 10px;
+            color: #666;
+            margin-bottom: 30px;
         }
-        main {
-            padding: 25px 40px;
-        }
-        section {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        section:last-child {
-            border-bottom: none;
-        }
-        h2 {
-            font-size: 1.8em;
-            color: #0056b3;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        h3 {
-            font-size: 1.3em;
-            color: #17a2b8;
-            margin-top: 25px;
-        }
-        p, ul {
-            font-size: 1.1em;
-            color: #495057;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23007bff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
-            padding-left: 35px;
-            margin-bottom: 15px;
-            background-size: 24px;
-        }
-        strong {
-            color: #0056b3;
-        }
-        .highlight {
-            background-color: #e9f5ff;
-            border-left: 5px solid #007bff;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .grid-item {
-            background-color: #f8f9fa;
+
+        .explanation {
+            background-color: #e8f0f7;
+            border-left: 5px solid var(--blue-france);
             padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
             border-radius: 8px;
+            font-size: 1em;
+            color: #2c3e50;
         }
-        .winner {
-            border-left: 5px solid #28a745;
+
+        .simulator {
+            margin-top: 30px;
+            padding: 30px;
+            background-color: #fafafa;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
         }
-        .loser {
-            border-left: 5px solid #dc3545;
+        
+        h2 {
+            color: var(--grey-dark);
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: 700;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #343a40;
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .input-item label {
+            font-weight: 700;
+            color: var(--blue-france);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .input-item input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-family: 'Roboto', sans-serif; /* Đảm bảo ô input cũng dùng phông chữ đúng */
+        }
+
+        .input-item input[type="number"]:focus {
+            border-color: var(--blue-france);
+            box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.15);
+            outline: none;
+        }
+
+        button {
+            background: linear-gradient(45deg, var(--red-france), #c0342b);
             color: white;
-            font-size: 0.9em;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(239, 65, 53, 0.3);
+            text-transform: uppercase;
         }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(239, 65, 53, 0.4);
+        }
+
+        .results-grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            text-align: left;
+            display: none; /* Initially hidden */
+        }
+        
+        .result-card {
+            background-color: var(--white-france);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .result-card h3 {
+            margin-top: 0;
+            font-size: 1.4em;
+            border-bottom: 2px solid var(--grey-light);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .result-card p {
+            font-size: 1.05em;
+            margin: 12px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .result-card .label {
+            color: #555;
+        }
+
+        .result-card .value {
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        
+        .fr-value { color: var(--blue-france); }
+        .eu-value { color: #E8A330; } /* Gold/Yellow for Euro */
+        .power-value { color: #27AE60; } /* Green for power */
+        .power-value.decreased { color: var(--red-france); } /* Red for decreased power */
+
+        .impact-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .impact-stable {
+            background-color: #e6f4ea;
+            color: #27AE60;
+        }
+
+        .impact-decreased {
+            background-color: #fdecea;
+            color: var(--red-france);
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <h1>Tìm Hiểu Về Lạm Phát</h1>
-            <p>Một cái nhìn tổng quan về các khái niệm, chi phí và cách đo lường</p>
-        </header>
+        <h1>💰 Mức Giá Tuyệt Đối Không Quan Trọng...</h1>
+        <p class="subtitle">Mà là sức mua thực tế. Hãy cùng khám phá tác động của việc thay đổi tiền tệ</p>
 
-        <main>
-            <section>
-                <h2>1. Tốc độ thay đổi quan trọng hơn mức giá</h2>
-                <p>Điểm cốt lõi không nằm ở việc giá cả cao hay thấp, mà là chúng thay đổi <strong>nhanh và khó đoán</strong> đến mức nào.</p>
-                <ul>
-                    <li><strong>Mức giá cao nhưng ổn định:</strong> Nền kinh tế có thể thích ứng. Doanh nghiệp và người dân có thể lập kế hoạch dài hạn một cách tự tin.</li>
-                    <li><strong>Tỷ lệ lạm phát cao và biến động:</strong> Gây ra sự không chắc chắn, làm xói mòn niềm tin. Nó giống như việc lái một chiếc xe liên tục tăng giảm tốc đột ngột - rất nguy hiểm và khó kiểm soát.</li>
-                </ul>
-                <div class="highlight">
-                    <p><strong>Ví dụ:</strong> Một quốc gia có giá một ổ bánh mì là 10 đồng nhưng ổn định trong 10 năm sẽ có nền kinh tế khỏe mạnh hơn một quốc gia mà giá bánh mì tăng từ 1 đồng lên 5 đồng chỉ trong một năm.</p>
+        <div class="explanation">
+            <strong>Bối cảnh thực tế:</strong> Năm 2002, Pháp chính thức thay thế đồng Franc (₣) bằng đồng Euro (€). Mọi giá cả, tiền lương và hợp đồng đều được quy đổi theo một tỷ giá cố định: <strong>6.55957 Francs = 1 Euro</strong>. Trình mô phỏng này sẽ cho thấy tác động của sự thay đổi đó và của lạm phát sau này.
+        </div>
+
+        <div class="simulator">
+            <h2>Thiết Lập Kịch Bản</h2>
+            <div class="input-grid">
+                <div class="input-item">
+                    <label for="salary">Lương tháng của bạn (Francs):</label>
+                    <input type="number" id="salary" value="12000" step="100">
                 </div>
-            </section>
-
-            <section>
-                <h2>2. Các Chi Phí Của Lạm Phát</h2>
-                <p>Lạm phát không chỉ làm giảm sức mua mà còn gây ra những tổn thất thực tế cho xã hội:</p>
-                <h3>👟 Chi phí mòn giày (Shoe-leather Cost)</h3>
-                <p>Là chi phí về thời gian và công sức khi người dân cố gắng giảm lượng tiền mặt nắm giữ. Họ phải thường xuyên đến ngân hàng hơn để giao dịch, làm lãng phí nguồn lực. Trong thời đại số, đây là thời gian và chi phí quản lý các khoản đầu tư để tránh "thuế lạm phát".</p>
-                <h3>🍽️ Chi phí thực đơn (Menu Cost)</h3>
-                <p>Là chi phí mà doanh nghiệp phải chịu mỗi khi cập nhật lại giá sản phẩm: từ việc in lại thực đơn, catalogue, thay đổi nhãn giá cho đến việc cập nhật hệ thống phần mềm.</p>
-                <h3>⚖️ Chi phí đơn vị hạch toán (Unit of Account Cost)</h3>
-                <p>Lạm phát làm tiền tệ mất đi vai trò là một thước đo giá trị đáng tin cậy. Điều này làm méo mó các quyết định kinh tế, tính toán lợi nhuận và nghĩa vụ thuế, vì thước đo (tiền) liên tục co lại.</p>
-            </section>
-
-            <section>
-                <h2>3. Kẻ Thắng, Người Thua & Cuộc Chiến Chống Lạm Phát</h2>
-                <p>Lạm phát phân phối lại của cải một cách tùy tiện trong xã hội.</p>
-                <div class="grid-container">
-                    <div class="grid-item loser">
-                        <h3>📉 Những người bị thiệt (Losers)</h3>
-                        <ul>
-                            <li><strong>Người cho vay</strong> (lãi suất cố định)</li>
-                            <li><strong>Người tiết kiệm, giữ tiền mặt</strong></li>
-                            <li><strong>Người có thu nhập cố định</strong> (hưu trí, công chức)</li>
-                        </ul>
-                    </div>
-                    <div class="grid-item winner">
-                        <h3>📈 Những người được lợi (Winners)</h3>
-                        <ul>
-                            <li><strong>Người đi vay</strong> (lãi suất cố định)</li>
-                            <li><strong>Chính phủ</strong> (với tư cách là người đi vay lớn)</li>
-                            <li><strong>Người sở hữu tài sản thực</strong> (bất động sản, vàng)</li>
-                        </ul>
-                    </div>
+                <div class="input-item">
+                    <label for="baguettePrice">Giá một ổ bánh mì (Francs):</label>
+                    <input type="number" id="baguettePrice" value="5" step="0.5">
                 </div>
-                <h3 style="margin-top: 30px;">Lạm phát thì dễ, Giảm lạm phát thì khó</h3>
-                <p>Gây ra lạm phát có thể dễ dàng (ví dụ: in tiền). Tuy nhiên, để kiềm chế nó (disinflation), ngân hàng trung ương phải thắt chặt chính sách tiền tệ, thường là bằng cách <strong>tăng lãi suất</strong>. Hành động này thường gây ra những hậu quả đau đớn như tăng trưởng kinh tế chậm lại, thất nghiệp gia tăng, thậm chí là suy thoái.</p>
-            </section>
-            
-            <section>
-                <h2>4. Đo Lường Lạm Phát: Rổ Hàng Hóa & Chỉ Số Giá</h2>
-                <p>Để theo dõi lạm phát, các nhà kinh tế sử dụng một phương pháp có hệ thống:</p>
-                <ul>
-                    <li><strong>🛒 Rổ hàng hóa (Market Basket):</strong> Là một danh sách cố định các hàng hóa và dịch vụ đại diện cho thói quen chi tiêu của một người tiêu dùng điển hình.</li>
-                    <li><strong>Chỉ số giá (Price Index):</strong> Là một con số đo lường chi phí của rổ hàng hóa tại một thời điểm so với chi phí của nó trong một năm gốc. Công thức cơ bản:
-                        <div class="highlight" style="text-align: center; font-family: monospace; font-size: 1.2em; padding: 20px;">
-                        Chỉ số giá = (Chi phí rổ hàng hóa hiện tại / Chi phí rổ hàng hóa năm gốc) × 100
-                        </div>
-                    </li>
-                </ul>
-            </section>
+                <div class="input-item">
+                    <label for="inflation">Lạm phát giá bánh mì sau đó (%):</label>
+                    <input type="number" id="inflation" value="15" step="1">
+                </div>
+            </div>
+            <button onclick="runSimulation()">Chạy Mô Phỏng</button>
+        </div>
 
-            <section>
-                <h2>5. Các Chỉ Số Lạm Phát Phổ Biến</h2>
-                <p>Có nhiều cách để đo lường lạm phát, mỗi cách cung cấp một góc nhìn khác nhau.</p>
-                <h3>Chỉ số giá tiêu dùng (CPI - Consumer Price Index)</h3>
-                <p>Đây là thước đo phổ biến nhất, theo dõi sự thay đổi giá của một rổ hàng hóa mà <strong>người tiêu dùng thành thị</strong> thường mua. Đây là con số mà chúng ta hay nghe nhất trên tin tức.</p>
-                <h3>Các thước đo khác</h3>
-                <ul>
-                    <li><strong>Chỉ số giá sản xuất (PPI):</strong> Theo dõi sự thay đổi giá từ góc độ của <strong>người sản xuất</strong> (giá nguyên vật liệu, hàng hóa trung gian). PPI thường là một chỉ báo sớm cho CPI.</li>
-                    <li><strong>Chỉ số giảm phát GDP (GDP Deflator):</strong> Là thước đo rộng nhất, phản ánh sự thay đổi giá của <strong>tất cả</strong> các hàng hóa và dịch vụ được sản xuất trong nước.</li>
-                </ul>
-            </section>
+        <div class="results-grid" id="results-grid">
+            <div class="result-card">
+                <h3>1. TÌNH HÌNH BAN ĐẦU (ĐỒNG FRANC ₣)</h3>
+                <p><span class="label">💵 Lương tháng:</span> <span id="fr-salary" class="value fr-value"></span></p>
+                <p><span class="label">🥖 Giá bánh mì:</span> <span id="fr-price" class="value fr-value"></span></p>
+                <p><span class="label">💪 Sức mua:</span> <span id="fr-power" class="value power-value"></span></p>
+            </div>
 
-        </main>
+            <div class="result-card">
+                <h3>2. SAU KHI CHUYỂN ĐỔI SANG EURO €</h3>
+                <p><span class="label">💵 Lương tháng mới:</span> <span id="eu-salary" class="value eu-value"></span></p>
+                <p><span class="label">🥖 Giá bánh mì mới:</span> <span id="eu-price" class="value eu-value"></span></p>
+                <p><span class="label">💪 Sức mua:</span> <span id="eu-power" class="value power-value"></span></p>
+                <div class="impact-message impact-stable">
+                    ✨ Việc chuyển đổi tiền tệ không làm thay đổi sức mua của bạn!
+                </div>
+            </div>
 
-        <footer>
-            <p>Bài thuyết trình về Lạm Phát - Tổng hợp các khái niệm cơ bản.</p>
-        </footer>
+            <div class="result-card">
+                <h3>3. SAU KHI GIÁ BÁNH MÌ LẠM PHÁT</h3>
+                <p><span class="label">💵 Lương tháng (không đổi):</span> <span id="eu-salary-inflated" class="value eu-value"></span></p>
+                <p><span class="label">🥖 Giá bánh mì mới (đã tăng):</span> <span id="eu-price-inflated" class="value eu-value"></span></p>
+                <p><span class="label">💪 Sức mua MỚI:</span> <span id="eu-power-inflated" class="value power-value decreased"></span></p>
+                 <div class="impact-message impact-decreased">
+                    ⚠️ Lạm phát đã xảy ra! Vì giá cả tăng mà lương không đổi, <strong>sức mua của bạn đã giảm!</strong>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        const FRANC_TO_EURO_RATE = 6.55957;
+
+        function formatCurrency(value, currency) {
+            // Sử dụng toLocaleString để định dạng số theo kiểu Pháp (dấu phẩy cho phần thập phân)
+            // và thêm ký hiệu tiền tệ thủ công để đảm bảo hiển thị đúng
+            if (currency === 'FRF') {
+                return value.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' ₣';
+            }
+            if (currency === 'EUR') {
+                return value.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+            }
+        }
+
+        function runSimulation() {
+            const salaryFRF = parseFloat(document.getElementById('salary').value);
+            const priceFRF = parseFloat(document.getElementById('baguettePrice').value);
+            const inflationPercent = parseFloat(document.getElementById('inflation').value) / 100;
+
+            if (isNaN(salaryFRF) || isNaN(priceFRF) || salaryFRF <= 0 || priceFRF <= 0) {
+                alert("Vui lòng nhập số dương hợp lệ cho lương và giá cả.");
+                return;
+            }
+
+            // --- Giai đoạn 1: Đồng Franc ---
+            const powerFRF = salaryFRF / priceFRF;
+            document.getElementById('fr-salary').textContent = formatCurrency(salaryFRF, 'FRF');
+            document.getElementById('fr-price').textContent = formatCurrency(priceFRF, 'FRF');
+            document.getElementById('fr-power').textContent = `${Math.floor(powerFRF)} ổ bánh mì`;
+
+            // --- Giai đoạn 2: Chuyển đổi sang Euro ---
+            const salaryEUR = salaryFRF / FRANC_TO_EURO_RATE;
+            const priceEUR = priceFRF / FRANC_TO_EURO_RATE;
+            const powerEUR = salaryEUR / priceEUR;
+            document.getElementById('eu-salary').textContent = formatCurrency(salaryEUR, 'EUR');
+            document.getElementById('eu-price').textContent = formatCurrency(priceEUR, 'EUR');
+            document.getElementById('eu-power').textContent = `${Math.floor(powerEUR)} ổ bánh mì`;
+
+            // --- Giai đoạn 3: Sau lạm phát ---
+            const priceEURInflated = priceEUR * (1 + inflationPercent);
+            const powerEURInflated = salaryEUR / priceEURInflated;
+            document.getElementById('eu-salary-inflated').textContent = formatCurrency(salaryEUR, 'EUR');
+            document.getElementById('eu-price-inflated').textContent = formatCurrency(priceEURInflated, 'EUR');
+            document.getElementById('eu-power-inflated').textContent = `${Math.floor(powerEURInflated)} ổ bánh mì`;
+
+            // Hiển thị kết quả
+            document.getElementById('results-grid').style.display = 'grid';
+        }
+
+        // Tự động chạy mô phỏng khi tải trang
+        document.addEventListener('DOMContentLoaded', runSimulation);
+    </script>
 
 </body>
 </html>
